@@ -1,0 +1,33 @@
+* {
+  color: brown;
+  background-color: tomato;
+  background-image: url(../images/kingjulian.webp);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* commentaire*/
+
+table {
+  border: 3px rgb(22, 21, 21) solid;
+}
+
+#photoprofil {
+  width: 100px;
+  height: 120px;
+}
+
+header {
+  background-color: aquamarine;
+}
+
+p {
+  color: blueviolet;
+}
+
+.libelle {
+  color: cadetblue;
+}
+
+#indexheader {
+  background-color: chocolate;
+}
