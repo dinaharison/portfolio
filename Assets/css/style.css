@@ -1,33 +1,71 @@
 * {
-  color: brown;
-  background-color: tomato;
-  background-image: url(../images/kingjulian.webp);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: rgb(255, 255, 255);
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-/* commentaire*/
-
-table {
-  border: 3px rgb(22, 21, 21) solid;
+body {
+  background-image: linear-gradient(315deg, #378b29 0%, #40db52 74%);
 }
 
-#photoprofil {
-  width: 100px;
-  height: 120px;
+.root {
+  width: 100w;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.1fr 1fr 0.1fr;
+  grid-column-gap: 1em;
+  grid-row-gap: 1em;
+  align-items: center;
+  justify-content: center;
 }
 
-header {
-  background-color: aquamarine;
+.menu-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-p {
-  color: blueviolet;
+.menu-item {
+  display: inline;
+  float: right;
+  width: 10%;
+  text-align: center;
 }
 
-.libelle {
-  color: cadetblue;
+footer .menu-item {
+  float: left;
+  padding-left: 4em;
 }
 
-#indexheader {
-  background-color: chocolate;
+.menu-item a {
+  display: block;
+  padding: 8px;
+  text-decoration: none;
+}
+
+.menu-item a:hover {
+  background-color: antiquewhite;
+  color: #45c270;
+}
+
+.presentation {
+  display: grid;
+  grid-template-columns: 1fr 0.4fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  padding-left: 4em;
+}
+
+.presentation h1 {
+  font-size: 4em;
+}
+
+.presentation p {
+  margin-top: 3em;
+  font-size: 1.5em;
 }
