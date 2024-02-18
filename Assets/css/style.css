@@ -23,6 +23,13 @@ body {
   justify-content: center;
 }
 
+nav,
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .menu-list {
   list-style-type: none;
   margin: 0;
@@ -30,8 +37,7 @@ body {
 }
 
 .menu-item {
-  display: inline;
-  float: right;
+  display: inline-block;
   text-align: center;
   i {
     margin: 3px 3px 3px 3px;
