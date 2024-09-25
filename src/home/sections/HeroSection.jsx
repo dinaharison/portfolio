@@ -7,10 +7,7 @@ import { Button } from "@nextui-org/react";
 
 function HeroSection() {
   return (
-    <section
-      className="relative w-full min-h-screen md:min-h-[89vh]  
-    grid grid-cols-7 grid-rows-6 gap-4"
-    >
+    <div className="grid grid-cols-7 grid-rows-6 gap-4">
       <div className="col-span-5 row-span-2 col-start-2 sm:col-span-5 sm:row-span-2 sm:col-start-2 sm:row-start-2 flex flex-row gap-4">
         <div className="w-32 h-44 hidden sm:block">
           <img
@@ -47,7 +44,7 @@ function HeroSection() {
           </Button>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 

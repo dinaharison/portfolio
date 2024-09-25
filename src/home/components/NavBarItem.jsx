@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 function NavBarItem({ link }) {
   const navigateTo = useNavigate();
   const onIconClick = () => {
-    navigateTo(link.path);
+    navigateTo(link.path, { state: { targetId: link.name } });
   };
 
   return (
