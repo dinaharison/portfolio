@@ -1,20 +1,6 @@
 <a class="skip" href="#main">Skip to content</a>
 <div id="overview">
-  <header class="wrap">
-    <div class="nav-glass">
-      <a class="brand" href="#overview" aria-label="Dinaharison, home">
-        <span class="monogram" aria-hidden="true">D<span>.</span></span>
-        <span>Dinaharison<span class="brand-dot">.</span></span>
-      </a>
-      <nav id="primary-nav" aria-label="Main navigation" [class.open]="menuOpen()">
-        @for (link of navigation; track link.id) {
-          <a [href]="'#' + link.id" [class.active]="active() === link.id" [attr.aria-current]="active() === link.id ? 'location' : null" (click)="menuOpen.set(false)">{{ link.label }}</a>
-        }
-      </nav>
-      <a class="cv-button" href="Jean-Bienvenue-Dinaharison-CV-FR.pdf" download><ui-icon name="download"/> Download CV</a>
-      <button id="menu-toggle" class="menu-button" type="button" aria-label="Toggle navigation" aria-controls="primary-nav" [attr.aria-expanded]="menuOpen()" (click)="menuOpen.set(!menuOpen())"><ui-icon [name]="menuOpen() ? 'close' : 'menu'"/></button>
-    </div>
-  </header>
+  <header portfolioNavigation class="wrap"></header>
   <main id="main"><div class="opening"><div class="wrap">
     <section class="hero" aria-labelledby="hero-heading">
       <div class="hero-copy">
