@@ -1,0 +1,56 @@
+<a class="skip" href="#main">Skip to content</a>
+<div id="overview">
+  <header class="wrap">
+    <div class="nav-glass">
+      <a class="brand" href="#overview" aria-label="Dinaharison, home">
+        <span class="monogram" aria-hidden="true">D<span>.</span></span>
+        <span>Dinaharison<span class="brand-dot">.</span></span>
+      </a>
+      <nav id="primary-nav" aria-label="Main navigation" [class.open]="menuOpen()">
+        @for (link of navigation; track link.id) {
+          <a [href]="'#' + link.id" [class.active]="active() === link.id" [attr.aria-current]="active() === link.id ? 'location' : null" (click)="menuOpen.set(false)">{{ link.label }}</a>
+        }
+      </nav>
+      <a class="cv-button" href="Jean-Bienvenue-Dinaharison-CV-FR.pdf" download><ui-icon name="download"/> Download CV</a>
+      <button id="menu-toggle" class="menu-button" type="button" aria-label="Toggle navigation" aria-controls="primary-nav" [attr.aria-expanded]="menuOpen()" (click)="menuOpen.set(!menuOpen())"><ui-icon [name]="menuOpen() ? 'close' : 'menu'"/></button>
+    </div>
+  </header>
+  <main id="main"><div class="opening"><div class="wrap">
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-copy">
+        <div class="eyebrow"><i></i> Software &amp; R&amp;D Engineer</div>
+        <h1 id="hero-heading">Jean Bienvenue<br><span>Dinaharison.</span></h1>
+        <p class="intro">I turn scientific models into interactive software. My work brings together research, simulation, and web engineering.</p>
+        <div class="hero-actions"><a class="button primary" href="#work">Explore my work <ui-icon name="arrow"/></a><a class="button secondary" href="#contact">Get in touch <ui-icon name="diagonal"/></a></div>
+        <div class="location"><ui-icon name="pin"/> Biot, France <span></span> <a href="https://github.com/dinaharison" aria-label="GitHub profile"><ui-icon name="github"/></a><a href="https://linkedin.com/in/dinaharison" aria-label="LinkedIn profile"><ui-icon name="linkedin"/></a></div>
+      </div>
+      <div class="art" aria-hidden="true"><div class="space-dust"></div><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="orbit orbit-c"></div><img class="sculpture" src="media/glass-knot.webp" width="950" height="950" alt="" fetchpriority="high"><b class="star s1">✧</b><b class="star s2">✦</b><b class="star s3">✦</b></div>
+    </section>
+    <section class="glance" aria-labelledby="glance-heading">
+      <div class="section-line"><i></i><h2 id="glance-heading">At a glance</h2><span></span></div>
+      <div class="glance-grid">
+        <a class="fact violet" href="#experience"><div class="fact-top"><span class="icon-box"><ui-icon name="case"/></span><ui-icon name="diagonal"/></div><span class="label">Current role</span><h3>Research Engineer</h3><p>INRAE · Sophia Antipolis</p></a>
+        <a class="fact aqua" href="#education"><div class="fact-top"><span class="icon-box"><ui-icon name="cap"/></span><ui-icon name="diagonal"/></div><span class="label">Education</span><h3>PhD in Computer Science</h3><p>Sorbonne University &amp; University of Fianarantsoa</p></a>
+        <a class="fact blue" href="#work"><div class="fact-top"><span class="icon-box"><ui-icon name="layers"/></span><ui-icon name="diagonal"/></div><span class="label">Research focus</span><h3>Modeling &amp; Simulation</h3><p>Agent-based models &amp; scientific software</p></a>
+      </div>
+    </section>
+  </div></div>
+<div class="wrap lower">
+  <section id="work" aria-labelledby="work-heading">
+    <div class="section-line"><i></i><h2 id="work-heading">Selected work</h2><span></span></div>
+    <div class="project-grid">
+      <article class="project"><div class="label">Scientific web application · INRAE</div><h3>DrosoSim</h3><p>A web platform for simulating pest management in cherry orchards. Researchers can configure a Python model and explore its results through interactive visualizations.</p><div class="tags"><span>Angular</span><span>FastAPI</span><span>D3.js</span></div><a class="text-link" href="https://drososim.fr">Visit DrosoSim <ui-icon name="diagonal"/></a></article>
+      <article class="project"><div class="label">Doctoral research · IRD</div><h3>Coupling simulation models</h3><p>A GAMA extension for connecting spatial agent-based models. A multilevel simulation of soil processes puts the coupling approach into practice.</p><div class="tags"><span>Java</span><span>GAMA</span><span>UML</span></div><a class="text-link" href="https://orcid.org/0000-0002-9247-5307">Research profile <ui-icon name="diagonal"/></a></article>
+    </div>
+  </section>
+  <section id="experience" aria-labelledby="experience-heading"><div class="section-line"><i></i><h2 id="experience-heading">Experience</h2><span></span></div>
+    @for (job of jobs; track job.title) {<article class="record"><span class="date">{{job.dates}}</span><div><h3>{{job.title}}</h3><div class="org">{{job.org}} · {{job.place}}</div><p>{{job.summary}}</p></div></article>}
+  </section>
+  <section id="education" aria-labelledby="education-heading"><div class="section-line"><i></i><h2 id="education-heading">Education</h2><span></span></div>
+    <article class="record"><span class="date">2018 — 2023</span><div><h3>PhD in Computer Science</h3><div class="org">Sorbonne University &amp; University of Fianarantsoa</div><p>Spatial agent-based coupling of mathematical and computational models, applied to soil ecosystem processes.</p></div></article>
+    <article class="record"><span class="date">2015 — 2017</span><div><h3>Research Master’s in Computer Science</h3><div class="org">École Nationale d’Informatique</div><p>Transformation of a Language Extended Lexicon into UML communication diagrams.</p></div></article>
+  </section>
+  <section id="contact" class="contact"><div><div class="eyebrow"><i></i> Contact</div><h2>Get in touch.</h2><a class="email" href="mailto:dinaharison.jb@gmail.com">dinaharison.jb&#64;gmail.com <ui-icon name="diagonal"/></a></div><div class="social"><a href="https://github.com/dinaharison">GitHub <ui-icon name="diagonal"/></a><a href="https://linkedin.com/in/dinaharison">LinkedIn <ui-icon name="diagonal"/></a><a href="https://orcid.org/0000-0002-9247-5307">ORCID <ui-icon name="diagonal"/></a></div></section>
+</div></main>
+  <footer class="wrap">Jean Bienvenue Dinaharison <a href="#overview">Back to top <ui-icon name="north"/></a></footer>
+</div>

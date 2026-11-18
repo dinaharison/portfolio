@@ -1,0 +1,6 @@
+services:
+  portfolio:
+    image: dinaharison-portfolio:local
+    build: .
+    ports:
+      - "8080:80"
