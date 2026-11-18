@@ -1,16 +1,51 @@
 import { Component } from '@angular/core';
 import { IconComponent } from '../../shared/icon.component';
+import { education, experience, profileLinks, projects } from './portfolio-content';
 import { PortfolioNavigation } from './portfolio-navigation.component';
+import { PortfolioOverview } from './portfolio-overview.component';
+import { PortfolioTimeline } from './portfolio-timeline.component';
+import { PortfolioWork } from './portfolio-work.component';
 
 @Component({
   selector: 'portfolio-root',
-  imports: [IconComponent, PortfolioNavigation],
-  templateUrl: './portfolio-page.html',
+  imports: [IconComponent, PortfolioNavigation, PortfolioOverview, PortfolioTimeline, PortfolioWork],
+  template: `
+    <a class="skip" href="#main">Skip to content</a>
+    <div id="overview">
+      <header portfolioNavigation class="wrap"></header>
+      <main id="main">
+        <portfolio-overview />
+        <div class="wrap lower">
+          <section portfolioWork id="work" [projects]="projects"></section>
+          <section portfolioTimeline id="experience" headingId="experience-heading"
+            heading="Experience" [entries]="experience"></section>
+          <section portfolioTimeline id="education" headingId="education-heading"
+            heading="Education" [entries]="education"></section>
+          <section id="contact" class="contact">
+            <div>
+              <div class="eyebrow"><i></i> Contact</div>
+              <h2>Get in touch.</h2>
+              <a class="email" href="mailto:dinaharison.jb@gmail.com">
+                dinaharison.jb&#64;gmail.com <ui-icon name="diagonal"/>
+              </a>
+            </div>
+            <div class="social">
+              <a [href]="links.github">GitHub <ui-icon name="diagonal"/></a>
+              <a [href]="links.linkedin">LinkedIn <ui-icon name="diagonal"/></a>
+              <a [href]="links.orcid">ORCID <ui-icon name="diagonal"/></a>
+            </div>
+          </section>
+        </div>
+      </main>
+      <footer class="wrap">
+        Jean Bienvenue Dinaharison <a href="#overview">Back to top <ui-icon name="north"/></a>
+      </footer>
+    </div>
+  `,
 })
 export class PortfolioPage {
-  readonly jobs = [
-    { dates: 'Mar 2025 — Present', title: 'Research Engineer in Computer Science', org: 'INRAE', place: 'Sophia Antipolis, France', summary: 'Working with researchers to turn a differential-equation model of orchard pests into a web application for running simulations and exploring results.' },
-    { dates: 'Jul 2023 — Nov 2024', title: 'Teaching & Research', org: 'University of Fianarantsoa & Inclusiv Academy', place: 'Madagascar', summary: 'Coordinated training, mentored teams building web and desktop applications, and researched agent-based modeling across disciplines.' },
-    { dates: 'Jan 2018 — Jun 2023', title: 'Doctoral Researcher in Computer Modeling', org: 'Institut de Recherche pour le Développement', place: 'France & Madagascar', summary: 'Designed a spatial approach to coupling heterogeneous simulation models, developed a Java extension for GAMA, and applied it to soil ecosystem processes.' }
-  ];
+  protected readonly projects = projects;
+  protected readonly experience = experience;
+  protected readonly education = education;
+  protected readonly links = profileLinks;
 }

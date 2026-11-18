@@ -17,12 +17,14 @@ const paths = {
   north: 'M12 20V4m-6 6 6-6 6 6'
 } as const;
 
+export type IconName = keyof typeof paths;
+
 @Component({
   selector: 'ui-icon',
   template: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path [attr.d]="paths[name()]"/></svg>',
   styles: [':host{display:inline-flex;width:1.1em;height:1.1em;flex:none}svg{width:100%;height:100%}']
 })
 export class IconComponent {
-  name = input.required<keyof typeof paths>();
+  readonly name = input.required<IconName>();
   protected readonly paths = paths;
 }
